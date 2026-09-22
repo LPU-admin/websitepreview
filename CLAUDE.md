@@ -110,6 +110,12 @@ calls for a linkable page. Give each one a stable `id` for deep linking.
 - `main` is live. GitHub Pages publishes from it.
 - Work on `dev`. Preview locally with `python3 -m http.server` and open
   `localhost:8000`. Merge to `main` only after Jose and Dash have reviewed.
+- **Preview site:** `LPU-admin/websitepreview` publishes
+  `https://lpu-admin.github.io/websitepreview/` from its `main`. Local branch
+  `preview` = `dev` minus `CNAME` (the preview must never claim the
+  production domain), with remote `preview` pointing at that repo. To refresh
+  it: `git checkout preview && git merge dev && git push`. Never push `CNAME`
+  there.
 - Long-term host is undecided. If per-pull-request preview URLs become
   necessary, moving to Cloudflare Pages or Netlify (GitHub stays the source of
   truth, DNS repointed once at Squarespace) is the option on the table. Not
