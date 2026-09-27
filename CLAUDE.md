@@ -8,16 +8,20 @@ below changes, edit this file in the same commit.
 Launch Pad Unlimited is a general partnership (Jose Carrillo and Dash Krehel) providing
 educational and professional services to museums and informal learning
 organizations — science centers, zoos, aquariums, libraries, makerspaces.
-Home-based in Pico Rivera, CA. LLC conversion planned later, not yet done.
+Home-based in Pico Rivera, CA — internal fact only. **Public site copy never
+names Pico Rivera.** The service area is "Southern California," narrowing to
+"the Los Angeles area" only where a specific location is needed.
+LLC conversion planned later, not yet done.
 
-**Seven service lines** (the site's core content):
+**Seven service lines** (the site's core content), in the order they appear on
+the site — AI and makerspace buildout lead, then partners alternate:
 
-1. Learning Design & Curriculum Development
-2. AI Integration & Enablement
-3. IT & Systems
-4. Evaluation & Data
-5. Makerspace Planning & Buildout
-6. Community Programming
+1. AI Integration & Enablement
+2. Makerspace Planning & Buildout
+3. Learning Design & Curriculum Development
+4. Community Programming
+5. IT & Systems
+6. Evaluation & Data
 7. Staffing Support
 
 **Partner split** — Jose: learning design, curriculum, AI enablement, IT and
@@ -126,10 +130,11 @@ calls for a linkable page. Give each one a stable `id` for deep linking.
 This is a real business's public site. Several things are genuinely unresolved,
 and a plausible-sounding guess is worse than a placeholder:
 
-- **Positioning copy** — what Launch Pad does that a generic ed consultant
-  cannot. Not written yet.
-- **Partner bios** — Jose and Dash. Not written yet.
-- **Domain email address** — the `mailto:` target. Confirm before hardcoding.
+- ~~**Positioning copy**~~ — written 2026-09-26. Short form on the home hero,
+  long form on the about page. Do not reword without asking.
+- **Partner bios** — Jose's is written. **Dash Krehel's is still not written.**
+- ~~**Domain email address**~~ — `info@launchpadunlimited.org`, confirmed
+  2026-09-26. Assembled at runtime in `main.js`; never hardcode it in HTML.
 - **Rates and pricing** — a rate card exists internally. Whether any of it goes
   on the public site has not been decided. Default to no.
 - **Client list, testimonials, past projects, credentials, certifications,

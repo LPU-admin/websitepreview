@@ -3,9 +3,8 @@
 // sitting in the HTML for scrapers, and keep the footer year current.
 
 (function () {
-  // TODO: confirm the domain email address before filling in `user`.
-  // Leave `user` empty and the page keeps its visible TODO placeholder.
-  var user = "";
+  // Leave `user` empty and the pages keep their visible TODO placeholder.
+  var user = "info";
   var domain = "launchpadunlimited.org";
 
   if (user) {
