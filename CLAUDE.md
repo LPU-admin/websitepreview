@@ -13,16 +13,22 @@ names Pico Rivera.** The service area is "Southern California," narrowing to
 "the Los Angeles area" only where a specific location is needed.
 LLC conversion planned later, not yet done.
 
-**Seven service lines** (the site's core content), in the order they appear on
-the site — AI and makerspace buildout lead, then partners alternate:
+**Eight service lines** (the site's core content), in the order they appear on
+the site — AI leads, then Dash's two build services, then the rest:
 
 1. AI Integration & Enablement
-2. Makerspace Planning & Buildout
-3. Learning Design & Curriculum Development
-4. Community Programming
-5. IT & Systems
-6. Evaluation & Data
-7. Staffing Support
+2. Exhibit Design & Fabrication
+3. Makerspace Planning & Buildout
+4. Learning Design & Curriculum Development
+5. Community Programming
+6. IT & Systems
+7. Evaluation & Data
+8. Staffing Support
+
+Exhibit Design & Fabrication was added 2026-09-26. It had been a partner-split
+skill only, but the positioning copy leads with "we build exhibits," so it
+needed a service block to link to. Its scope has not been confirmed with
+Dash — see Do not invent.
 
 **Partner split** — Jose: learning design, curriculum, AI enablement, IT and
 systems, evaluation and data. Dash Krehel: exhibit design and fabrication, makerspace
@@ -44,12 +50,10 @@ audience is museum directors and city procurement staff, not consumers.
 
 ## Known issues
 
-**HTTPS is not enforced.** As of 2026-09-21, `https://launchpadunlimited.org/`
-returns a 302 to `http://launchpadunlimited.org/`, and
-`https://lpu-admin.github.io/website/` does the same. Visitors get a "Not
-secure" warning. DNS is not the cause. Most likely the "Enforce HTTPS" checkbox
-under Settings → Pages, or a certificate still provisioning. Jose is
-investigating — confirm it is fixed before treating the site as launch-ready.
+~~**HTTPS is not enforced.**~~ Fixed as of 2026-09-26: `http://` now 301s to
+`https://`, and `https://launchpadunlimited.org/` returns 200. The fix
+coincided with a delete-and-recreate of `CNAME` on `main`, which re-triggered
+certificate provisioning.
 
 Secondary: the apex has no IPv6 (AAAA) records. GitHub recommends adding the
 `2606:50c0:800{0,1,2,3}::153` set. Not causing the HTTPS problem.
@@ -117,9 +121,10 @@ calls for a linkable page. Give each one a stable `id` for deep linking.
 - **Preview site:** `LPU-admin/websitepreview` publishes
   `https://lpu-admin.github.io/websitepreview/` from its `main`. Local branch
   `preview` = `dev` minus `CNAME` (the preview must never claim the
-  production domain), with remote `preview` pointing at that repo. To refresh
-  it: `git checkout preview && git merge dev && git push`. Never push `CNAME`
-  there.
+  production domain), with remote `previewrepo` pointing at that repo. To
+  refresh it: `git checkout preview && git merge dev && git push`. Never push
+  `CNAME` there. In GitHub Desktop the repo is always shown as "website" (one
+  local folder, two remotes) — the *branch* decides where a push lands.
 - Long-term host is undecided. If per-pull-request preview URLs become
   necessary, moving to Cloudflare Pages or Netlify (GitHub stays the source of
   truth, DNS repointed once at Squarespace) is the option on the table. Not
@@ -133,6 +138,10 @@ and a plausible-sounding guess is worse than a placeholder:
 - ~~**Positioning copy**~~ — written 2026-09-26. Short form on the home hero,
   long form on the about page. Do not reword without asking.
 - **Partner bios** — Jose's is written. **Dash Krehel's is still not written.**
+- **Exhibit fabrication scope** — the `#exhibits` block describes categories of
+  work, not shop capabilities. Dash has not confirmed what the partnership can
+  actually fabricate (materials, interactives, scale). Confirm before a client
+  reads it.
 - ~~**Domain email address**~~ — `info@launchpadunlimited.org`, confirmed
   2026-09-26. Assembled at runtime in `main.js`; never hardcode it in HTML.
 - **Rates and pricing** — a rate card exists internally. Whether any of it goes
