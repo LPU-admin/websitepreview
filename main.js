@@ -10,9 +10,10 @@
   if (user) {
     var address = user + "@" + domain;
     document.querySelectorAll("[data-email]").forEach(function (el) {
-      el.setAttribute("href", "mailto:" + address);
-      el.textContent = address;
-      el.classList.remove("todo");
+      var link = document.createElement("a");
+      link.setAttribute("href", "mailto:" + address);
+      link.textContent = address;
+      el.replaceWith(link);
     });
   }
 

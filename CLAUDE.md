@@ -65,7 +65,9 @@ Secondary: the apex has no IPv6 (AAAA) records. GitHub recommends adding the
   page without a toolchain. Do not introduce a build step without asking.
 - Shared `styles.css` across all pages. No CSS framework.
 - No contact form. Contact is a `mailto:` link, lightly obfuscated against
-  scrapers. GitHub Pages cannot process form submissions; adding a form means
+  scrapers: pages ship `<span data-email>info [at] launchpadunlimited.org</span>`
+  and `main.js` swaps in a real `mailto:` anchor at load. With JS off the
+  address is still readable by a human. GitHub Pages cannot process form submissions; adding a form means
   adding a third-party service, which is a decision, not an implementation
   detail — ask first.
 - Responsive down to phone width. Semantic HTML and real accessibility
@@ -105,7 +107,7 @@ NASA imagery is usable (generally public domain), subject to:
 Four pages, built so the services page can split later without a rewrite:
 
 - `index.html` — home
-- `services.html` — all seven service lines as self-contained blocks
+- `services.html` — all eight service lines as self-contained blocks
 - `about.html` — the partnership, Jose and Dash
 - `contact.html` — mailto and service area
 
@@ -137,11 +139,13 @@ and a plausible-sounding guess is worse than a placeholder:
 
 - ~~**Positioning copy**~~ — written 2026-09-26. Short form on the home hero,
   long form on the about page. Do not reword without asking.
-- **Partner bios** — Jose's is written. **Dash Krehel's is still not written.**
+- ~~**Partner bios**~~ — both written as of 2026-10-01.
 - **Exhibit fabrication scope** — the `#exhibits` block describes categories of
-  work, not shop capabilities. Dash has not confirmed what the partnership can
-  actually fabricate (materials, interactives, scale). Confirm before a client
-  reads it.
+  work, not shop capabilities. Dash's bio establishes the background (product
+  design, CAD/CAM, digital fabrication, Lead Fabricator at NHMLAC), but the
+  partnership's own capacity — materials, interactive builds, physical scale,
+  what gets subcontracted — is still unconfirmed. Settle it before quoting a
+  fabrication job.
 - ~~**Domain email address**~~ — `info@launchpadunlimited.org`, confirmed
   2026-09-26. Assembled at runtime in `main.js`; never hardcode it in HTML.
 - **Rates and pricing** — a rate card exists internally. Whether any of it goes
